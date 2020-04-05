@@ -1,0 +1,38 @@
+package com.example.demo.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.entities.Employee;
+import com.example.demo.repositories.EmployeeRepository;
+
+@Service("employeeService")
+public class EmployeeServiceImp implements EmployeeService {
+	@Autowired
+	private EmployeeRepository employeeRepository;
+
+	@Override
+	public Iterable<Employee> findAll() {
+		// TODO Auto-generated method stub
+		return employeeRepository.findAll();
+	}
+
+	@Override
+	public Employee find(int id) {
+		// TODO Auto-generated method stub
+		return employeeRepository.findById(id).get();
+	}
+
+	@Override
+	public Employee save(Employee employee) {
+		// TODO Auto-generated method stub
+		return employeeRepository.save(employee);
+	}
+
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		employeeRepository.deleteById(id);
+	}
+
+}
