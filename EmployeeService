@@ -1,0 +1,13 @@
+package com.example.demo.services;
+
+import com.example.demo.entities.Employee;
+
+public interface EmployeeService {
+	public Iterable<Employee> findAll();
+
+	public Employee find(int id);
+
+	public Employee save(Employee employee);
+
+	public void delete(int id);
+}
