@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>一時貸出機器種別設定</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css " />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js "></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script>
+              $(document).ready(function() {
+             //Try to get tbody first with jquery children. works faster!
+         var tbody = $('#demo_datatables').children('tbody');
+         
+         //Then if no tbody just select your table 
+         var table = tbody.length ? tbody : $('#demo_datatables');
+         
+         
+         $('#button').click(function(){
+         //Add row
+         table.append('<tr><td>1</td><td><input type ="text" class="form-control"</td><td><select id="status"><option value="有効">有効</option><option value="無効">無効</option>  </select></td><td><button class="up"><i class="fa fa-arrow-up" aria-hidden="true"></i></button><button class="down"><i class="fa fa-arrow-down" aria-hidden="true"></i></button></td><td><button type="button" class="btn btn-danger">削除</button></td></tr>');
+         })
+         });
+    </script>
+    <style>
+        table.dataTable, table.dataTable th, table.dataTable td {
+            box-sizing: content-box;
+            text-align: center;
+        }
+        .table-bordered td {
+            border: 1px solid black;
+            vertical-align: middle;
+        }
+        
+        table.dataTable {
+            width: 100%;
+            margin: 0 auto;
+            clear: both;
+            border-collapse: collapse!important;
+            border-spacing: 0;
+        }
+        
+        body {
+            background-color: #f1f1f1 !important;
+        }
+        .btn-secondary {
+            color: #fff;
+            background-color: #6c757d;
+            border-color: #6c757d;
+            padding: 5px 30px;
+        }
+        .btn-danger {
+            color: #fff;
+            background-color: #dc3545;
+            border-color: #dc3545;
+            padding: 5px 30px;
+        }
+        .main-section {
+            margin-top: 20px;
+        }
+        
+        .main-section h1 {
+            margin-bottom: 20px;
+        }
+        
+        .dataTables_wrapper {
+            padding: 40px 20px;
+        }
+        
+        .dataTable,
+        .paging_two_button,
+        .dataTables_info {
+            margin: 10px 0px !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container main-section">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <h3 class="text-center">一時貸出機器種別設定</h3>
+                <div class="text-center">
+                    <button type="button" class="btn btn-secondary">登録</button>
+                    <button type="button" class="btn btn-success">キャンセル</button>
+                </div>
+                <table id="demo_datatables" class="table table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>No</th>
+                            <th>貸出機器種別</th>
+                            <th>有効/無効</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>モバイルPC</td>
+                            <td>
+                                <select id="status">
+                                    <option value="有効">有効</option>
+                                    <option value="無効">無効</option>
+                                </select>
+                            </td>
+                             <td class="gridd"> <button class='up'><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+                              <button class='down'><i class="fa fa-arrow-down" aria-hidden="true"></i></button>
+                           </td>
+                            <td>
+                                <button type="button" class="btn btn-danger">削除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>シンクライアントPC</td>
+                            <td>
+                                <select id="status">
+                                    <option value="有効">有効</option>
+                                    <option value="無効">無効</option>
+                                </select>
+                            </td>
+                                <td> <button class='up'><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+                              <button class='down'><i class="fa fa-arrow-down" aria-hidden="true"></i></button>
+                           </td>
+                            <td>
+                                <button type="button" class="btn btn-danger">削除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>携帯電話</td>
+                            <td>
+                                <select id="status">
+                                    <option value="有効">有効</option>
+                                    <option value="無効">無効</option>
+                                </select>
+                            </td>
+                               <td> <button class='up'><i class="fa fa-arrow-up up" aria-hidden="true"></i></button>
+                              <button class='down'><i class="fa fa-arrow-down" aria-hidden="true"></i></button>
+                           </td>
+                            <td>
+                                <button type="button" class="btn btn-danger">削除</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>通信カード</td>
+                            <td>
+                                <select id="status">
+                                    <option value="有効">有効</option>
+                                    <option value="無効">無効</option>
+                                </select>
+                            </td>
+                                <td> <button class='up'><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+                              <button class='down'><i class="fa fa-arrow-down" aria-hidden="true"></i></button>
+                           </td>
+                            <td>
+                                <button type="button" class="btn btn-danger">削除</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+              <input type="button" id="button" name="BTT">
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(function() {
+            // デフォルトの設定を変更
+            $.extend($.fn.dataTable.defaults, {
+                language: {
+                    url: "http://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Japanese.json"
+                }
+            });
+            $("#demo_datatables").DataTable({
+                "paging": true,
+                "filter": false,
+                "lengthMenu": [
+                    [3, 10, 25, 50, -1],
+                    [3, 10, 25, 50, "All"]
+                ]
+
+            })
+        });
+        $(document).ready(function () {
+     $(".up,.down").click(function () {
+               
+         var $element = this;
+         var row = $($element).parents("tr:first");
+         
+         if($(this).is('.up')){
+             row.insertBefore(row.prev());
+         }
+         
+         else{
+              row.insertAfter(row.next());
+         }
+       
+    });
+});
+    </script>
+</body>
+
+</html>
