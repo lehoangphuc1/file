@@ -1,0 +1,38 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="s" uri="http://www.springframework.org/tags/form"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Index</title>
+</head>
+<body>
+	<s:form method="post" modelAttribute="account"
+		action="${pageContext.request.contextPath}/account/save">
+		<table cellpadding="2" cellpadding="2">
+			<tr>
+				<td>Username</td>
+				<td><s:input path="username" /></td>
+				<td><s:errors path="username"></s:errors></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><s:input path="password" /></td>
+				<td><s:errors path="password"></s:errors></td>
+			</tr>
+			<tr>
+				<td>Full name</td>
+				<td><s:input path="fullname" /></td>
+				<td><s:errors path="fullname"></s:errors></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><input type="submit" value="Save" /></td>
+
+			</tr>
+		</table>
+
+	</s:form>
+</body>
+</html>
